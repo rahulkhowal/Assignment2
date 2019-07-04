@@ -6,46 +6,18 @@ import React,{Component} from 'react'
 //import Button from '@material-ui/core/Button';
 //import Cookies from 'universal-cookie';
 //const cookies = new Cookies();
-class Dashboard extends Component{
- state={
- 	data:''
- }
- //let List=this.state.data.map(curr=>{
-		//return(
-                //<div className="list container" keys=(curr.id)>
-                 //<span>Day:{curr.weekday}</span>
-                //</div>
-			//)
-	//})
-componentWillMount =async()=>{
-	
-    const api_call = await fetch('https://www.getpostman.com/collections/aaedf5d90a04b24a2e7b');
-        const response = await api_call.json(); 
-        console.log(response.requests[0].responses)
-        this.setState({
-        	data:response.requests[0].responses[0].text
-        })
-        console.log(this.state.data)
-        console.log(response.requests[0].responses[0].text)
-	}
-
-	
-	render(){
+import NewsApp from './DashboardComponents/NewsAPI/NewsApi'
+import './DashboardComponents/NewsAPI/style.css'
+//import Button from '@material-ui/core/Button'
+class Dashboard extends Component{	
+render(){
 		//const {lists}= this.state.data
-		const { lists }=this.state.data.length ? (this.state.data.map(curr=>{
-			   return(     
-                       <div>
-                        <span>day:{curr.weekday}</span>
-                        <span>OpeningHours:{curr.from_hour}</span>
-                        <span>ClosingHour:{curr.to_hour}</span>
-                        </div>
-			     	)  
+		return(
 
-		})
-		) : (<h1>no data</h1>)*/
-		return(		
-			 <div className="list collection">{lists}</div>
-		);
-	};
+              <div className="Dashboard">
+              <NewsApp/>
+              </div>
+			);
+  }
 }
 export default Dashboard

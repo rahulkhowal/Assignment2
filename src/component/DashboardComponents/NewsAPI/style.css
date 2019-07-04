@@ -1,0 +1,26 @@
+.text-input {
+  width: 80%;
+  align-content: center;
+  border: 1px solid #f7f7f7;
+  padding: 10px;
+}
+
+
+.news-items {
+  list-style: none;
+  padding-left: 0;
+}
+
+.news-items li {
+  margin-bottom: 10px;
+}
+
+.item-container{
+  margin: 0 auto; 
+  width:250px;
+}
+.Button{
+	position:absolute;
+	left:10%;
+	top:30%;
+}
